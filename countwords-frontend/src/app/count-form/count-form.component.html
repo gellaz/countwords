@@ -1,0 +1,43 @@
+<div class="px-4 py-5 my-5 text-center">
+  <img
+    class="d-block mx-auto mb-4"
+    src="/docs/5.0/assets/brand/bootstrap-logo.svg"
+    alt=""
+    width="72"
+    height="57"
+  />
+  <h1 class="display-5 fw-bold">CountWords Web App</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">
+      Type or paste some text below to count the number of words or ...
+    </p>
+    <form [formGroup]="countForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="6"
+          name="textarea"
+          formControlName="text"
+        ></textarea>
+      </div>
+      <hr />
+      <p class="lead mb-4">... upload a .txt file to count the words in it</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button type="submit" class="btn btn-primary btn-lg px-4 gap-3">
+          Count Words
+        </button>
+        <button
+          type="button"
+          (click)="resetForm()"
+          class="btn btn-secondary btn-lg px-4 gap-3"
+        >
+          Clear
+        </button>
+      </div>
+    </form>
+    <div *ngIf="count != 0" class="alert alert-info" role="alert">
+      Text contains {{ count }} words
+    </div>
+  </div>
+</div>

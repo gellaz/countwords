@@ -8,12 +8,14 @@ import org.springframework.web.multipart.MultipartFile;
 import java.nio.charset.StandardCharsets;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class CountwordsController {
 
-    @GetMapping("/count/{text}")
-    public Integer countWordsFromText(@PathVariable("text") String text) {
-        String[] words = text.split(" ");
-        return words.length;
+    @PostMapping("/count")
+    public ResponseEntity countWordsFromText(@RequestBody String text) {
+        String trimmedText = text.trim();
+        String[] words = trimmedText.split(" ");
+        return ResponseEntity.ok(words.length);
     }
 
     @PostMapping("/upload")
@@ -25,7 +27,8 @@ public class CountwordsController {
             return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body("File must be .txt");
 
         String text = new String(multipartFile.getBytes(), StandardCharsets.UTF_8);
-        String[] words = text.split(" ");
+        String trimmedText = text.trim();
+        String[] words = trimmedText.split(" ");
 
         return ResponseEntity.ok(words.length);
     }
