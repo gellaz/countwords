@@ -6,11 +6,17 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class CountwordsService {
-  private baseUrl = "http://localhost:8080/count"
+  private baseUrl = 'http://localhost:8080';
 
   constructor(private httpClient: HttpClient) {}
 
   countWords(text: string): Observable<Object> {
-    return this.httpClient.post(`${this.baseUrl}`, text);
+    return this.httpClient.post(`${this.baseUrl}/count`, text);
+  }
+
+  uploadFile(file: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('multipartFile', file, file.name);
+    return this.httpClient.post(`${this.baseUrl}/upload`, formData);
   }
 }

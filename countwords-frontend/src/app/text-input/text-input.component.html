@@ -1,0 +1,27 @@
+<form [formGroup]="countForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <textarea
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="6"
+      name="textarea"
+      formControlName="text"
+    ></textarea>
+  </div>
+  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+    <button type="submit" class="btn btn-primary btn-lg px-4 gap-3">
+      Count Words
+    </button>
+    <button
+      type="button"
+      (click)="resetForm()"
+      class="btn btn-secondary btn-lg px-4 gap-3"
+    >
+      Clear
+    </button>
+  </div>
+</form>
+
+<div *ngIf="count" class="alert alert-info mt-3" role="alert">
+  Text contains {{ count }} words.
+</div>

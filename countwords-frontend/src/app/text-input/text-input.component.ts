@@ -3,11 +3,11 @@ import { CountwordsService } from '../countwords.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-count-form',
-  templateUrl: './count-form.component.html',
-  styleUrls: ['./count-form.component.css'],
+  selector: 'app-text-input',
+  templateUrl: './text-input.component.html',
+  styleUrls: ['./text-input.component.css'],
 })
-export class CountFormComponent implements OnInit {
+export class TextInputComponent implements OnInit {
   public count: number = 0;
 
   public countForm: FormGroup = new FormGroup({
