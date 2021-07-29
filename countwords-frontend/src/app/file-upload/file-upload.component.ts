@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CountwordsService } from '../countwords.service';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-file-upload',
@@ -11,7 +11,7 @@ export class FileUploadComponent implements OnInit {
   loading: boolean = false;
   count: number = 0;
 
-  constructor(private countwordsService: CountwordsService) {}
+  constructor(private appService: AppService) {}
 
   ngOnInit(): void {}
 
@@ -19,7 +19,7 @@ export class FileUploadComponent implements OnInit {
     this.file = event.target.files[0];
     this.loading = !this.loading;
     if (this.file) {
-      this.countwordsService.uploadFile(this.file).subscribe(
+      this.appService.uploadFile(this.file).subscribe(
         (data) => {
           this.count = data as number;
           this.loading = false;

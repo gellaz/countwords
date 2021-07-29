@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CountwordsService } from '../countwords.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-text-input',
@@ -17,7 +17,7 @@ export class TextInputComponent implements OnInit {
     ]),
   });
 
-  constructor(private countwordsService: CountwordsService) {}
+  constructor(private appService: AppService) {}
 
   get text() {
     return this.countForm.get('text');
@@ -38,7 +38,7 @@ export class TextInputComponent implements OnInit {
 
   onSubmit() {
     if (this.countForm.valid) {
-      this.countwordsService.countWords(this.text?.value).subscribe(
+      this.appService.countWords(this.text?.value).subscribe(
         (data) => (this.count = data as number),
         (error) => console.error(error)
       );
