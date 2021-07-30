@@ -13,37 +13,25 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a
-            aria-current="page"
-            class="nav-link active"
-            routerLink="/home"
-            routerLinkActive="active"
-          >Home</a
-          >
+          <a aria-current="page" class="nav-link active" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/login" routerLinkActive="active"
-          >Login</a
-          >
+          <a class="nav-link" href="#">Features</a>
         </li>
-        <li class="nav-item d-flex">
-          <svg
-            (click)="logout()"
-            class="bi bi-door-open-fill"
-            fill="currentColor"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2h.5a.5.5 0 0 1 .5.5V15h-1V2zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"
-            />
-          </svg>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
         </li>
       </ul>
+      <span class="navbar-text">
+        Logout
+        <svg class="bi bi-door-open-fill ms-2" fill="currentColor" height="20" viewBox="0 0 16 16"
+             width="20" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2h.5a.5.5 0 0 1 .5.5V15h-1V2zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"></path>
+        </svg>
+      </span>
     </div>
   </div>
 </nav>
