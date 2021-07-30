@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { AppService } from '../app.service';
+import {Component, OnInit} from '@angular/core';
+import {AppService} from '../app.service';
 
 @Component({
   selector: 'app-file-upload',
@@ -11,9 +11,11 @@ export class FileUploadComponent implements OnInit {
   loading: boolean = false;
   count: number = 0;
 
-  constructor(private appService: AppService) {}
+  constructor(private appService: AppService) {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   onFileSelected(event: any) {
     this.file = event.target.files[0];

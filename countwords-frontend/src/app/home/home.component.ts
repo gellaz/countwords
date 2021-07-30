@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { AppService } from '../app.service';
+import {Component, OnInit} from '@angular/core';
+import {AppService} from '../app.service';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +7,13 @@ import { AppService } from '../app.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private app: AppService) {}
+  constructor(private app: AppService) {
+  }
 
   authenticated() {
     return this.app.authenticated;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 }
